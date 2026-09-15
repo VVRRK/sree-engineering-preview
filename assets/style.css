@@ -40,7 +40,7 @@ img{display:block;max-width:100%;height:auto}
 .brand-mark{height:56px;width:auto}
 .brand-text{display:flex;flex-direction:column;line-height:1.08}
 .brand-name{font-family:var(--font-d);font-weight:800;font-size:38px;letter-spacing:-.02em;color:#FF0000;white-space:nowrap}
-.brand-tag{font-size:8px;color:var(--dim);letter-spacing:.155em;text-transform:uppercase;font-weight:600;white-space:nowrap;text-align:justify;text-align-last:justify;width:100%;line-height:1.25;margin-top:3px}
+.brand-tag{font-size:11px;color:var(--dim);letter-spacing:.36em;text-transform:uppercase;font-weight:600;white-space:nowrap;text-align:justify;text-align-last:justify;width:100%;line-height:1.3;margin-top:4px}
 .nav-links{display:flex;gap:6px;align-items:center}
 .nav-links a{font-size:14px;font-weight:600;color:var(--text2);padding:8px 14px;border-radius:8px;transition:all .25s var(--ease);position:relative}
 .nav-links a:hover{color:var(--charcoal);background:var(--grey)}
@@ -315,11 +315,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:52px;padding-bottom:56px}
 @media(max-width:980px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
 @media(max-width:600px){.foot-grid{grid-template-columns:1fr}}
-.foot-brand .brand-mark{height:44px;margin-bottom:16px}
+.foot-brand{display:flex;flex-direction:column;align-items:center;text-align:center}
+.foot-brand .brand-mark{height:48px;margin-bottom:14px}
 .foot-brand .bn-wrap{display:inline-flex;flex-direction:column;max-width:100%;line-height:1.15}
 .foot-brand .bn{font-family:var(--font-d);font-size:18px;font-weight:800;letter-spacing:-.01em;display:block;color:#FF0000;white-space:nowrap}
-.foot-brand .bt{font-size:8px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.02em;font-weight:600;display:block;margin-bottom:16px;white-space:nowrap;text-align:justify;text-align-last:justify;width:100%}
-.foot-brand p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;max-width:320px}
+.foot-brand .bt{font-size:8.5px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:0;font-weight:600;display:block;margin:3px 0 16px;white-space:nowrap;text-align:center}
+.foot-brand p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;max-width:320px;margin:0 auto}
 .foot-col h5{font-family:var(--font-d);font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:22px;color:#fff;position:relative;padding-bottom:10px}
 .foot-col h5::after{content:'';position:absolute;bottom:0;left:0;width:24px;height:2.5px;background:var(--grad);border-radius:2px}
 .foot-col ul{list-style:none}
@@ -377,14 +378,14 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 @media(max-width:1100px){
   .nav-links{gap:18px}
   .nav-links a{font-size:13px;padding:8px 10px}
-  .brand-tag{font-size:7px;letter-spacing:.09em}
+  .brand-tag{font-size:9px;letter-spacing:.22em}
   .brand-name{font-size:27px}
   .brand-mark{height:44px}
   .nav-inner{height:76px}
 }
 @media(max-width:400px){
   .brand-name{font-size:22px}
-  .brand-tag{font-size:6.5px;letter-spacing:.02em}
+  .brand-tag{font-size:8px;letter-spacing:.13em}
   .brand-mark{height:38px}
 }
 @media(max-width:1024px) and (min-width:769px){
