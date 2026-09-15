@@ -13,7 +13,7 @@ jobs:
           if [ ! -f deploy.done ]; then echo "No deploy marker - skipping"; exit 0; fi
           if [ ! -f deploy.py ]; then echo "No deploy script"; exit 0; fi
           python3 deploy.py
-          rm -f site_part*.b64 site.tar.gz deploy.done deploy.fixes deploy.shas deploy.py
+          rm -f site_part*.b64 site.tar.gz deploy.done deploy.fixes deploy.partfixes deploy.shas deploy.py
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
