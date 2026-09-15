@@ -1,0 +1,16 @@
+name: Netlify Deploy
+
+on:
+  repository_dispatch:
+    types: [netlify-deploy]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Netlify
+        env:
+          SITE_ID: ${{ github.event.client_payload.site_id }}
+          PROXY_PATH: ${{ github.event.client_payload.proxy_path }}
+        run: npx -y @netlify/mcp@latest --site-id "$SITE_ID" --proxy-path "$PROXY_PATH"
