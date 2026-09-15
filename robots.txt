@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sreeengineering.co.in/sitemap.xml
+Sitemap: https://vvrrk.github.io/sree-engineering-preview/sitemap.xml
