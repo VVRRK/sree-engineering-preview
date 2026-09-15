@@ -40,12 +40,12 @@ img{display:block;max-width:100%;height:auto}
 .brand-mark{height:56px;width:auto}
 .brand-text{display:flex;flex-direction:column;line-height:1.08}
 .brand-name{font-family:var(--font-d);font-weight:800;font-size:38px;letter-spacing:-.02em;color:#FF0000;white-space:nowrap}
-.brand-tag{font-size:11px;color:var(--dim);letter-spacing:.36em;text-transform:uppercase;font-weight:600;white-space:nowrap;text-align:justify;text-align-last:justify;width:100%;line-height:1.3;margin-top:4px}
+.brand-tag{font-size:12px;color:var(--dim);letter-spacing:.28em;text-transform:uppercase;font-weight:600;white-space:nowrap;text-align:center;line-height:1.3;margin-top:4px}
 .nav-links{display:flex;gap:6px;align-items:center}
 .nav-links a{font-size:14px;font-weight:600;color:var(--text2);padding:8px 14px;border-radius:8px;transition:all .25s var(--ease);position:relative}
 .nav-links a:hover{color:var(--charcoal);background:var(--grey)}
 .nav-links a.active{color:var(--red)}
-.nav-links a.active::after{content:'';position:absolute;bottom:-2px;left:14px;right:14px;height:2.5px;background:var(--grad);border-radius:2px}
+.nav-links a.active::after{content:'';position:absolute;bottom:-2px;left:14px;right:14px;height:2.5px;background:linear-gradient(135deg,var(--red),var(--orange));border-radius:2px}
 .nav-cta{font-size:13.5px;font-weight:700;padding:10px 22px;border-radius:100px;background:var(--grad);color:#fff;transition:all .3s var(--ease);white-space:nowrap}
 .nav-cta:hover{box-shadow:0 6px 24px var(--red-glow);transform:translateY(-1px)}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
@@ -66,7 +66,7 @@ img{display:block;max-width:100%;height:auto}
 .hero-img img{width:100%;height:100%;object-fit:cover}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(12,12,15,.92) 0%,rgba(12,12,15,.78) 34%,rgba(15,15,18,.38) 62%,rgba(15,15,18,.06) 100%)}
 .hero-content{position:relative;z-index:2;padding:100px 0 80px}
-.hero-kicker{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:100px;background:rgba(14,77,164,.22);border:1px solid rgba(59,130,246,.35);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-bright);margin-bottom:26px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:100px;background:rgba(215,25,32,.20);border:1px solid rgba(255,106,0,.45);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:26px}
 .hero-kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 var(--orange-glow)}50%{box-shadow:0 0 0 8px transparent}}
 .hero h1{font-family:var(--font-d);font-weight:800;font-size:clamp(40px,6.5vw,86px);line-height:1.0;letter-spacing:-.04em;background:linear-gradient(135deg,#FF4545,#FF0000);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#FF0000;margin-bottom:8px;text-shadow:0 2px 30px rgba(255,0,0,.28)}
@@ -78,6 +78,7 @@ img{display:block;max-width:100%;height:auto}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;padding:15px 32px;border-radius:100px;cursor:pointer;border:none;transition:all .3s var(--ease);font-family:var(--font-b);letter-spacing:.01em}
 .btn-primary{background:var(--grad);color:#fff}
+.hero .btn-primary{background:linear-gradient(135deg,var(--red),var(--orange))}
 .btn-primary:hover{box-shadow:0 10px 32px var(--red-glow);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--charcoal);border:2px solid var(--charcoal)}
 .hero .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35)}
@@ -87,6 +88,7 @@ img{display:block;max-width:100%;height:auto}
 .btn:hover .arr{transform:translateX(4px)}
 .hero-stats{display:flex;gap:44px;margin-top:56px;flex-wrap:wrap}
 .hero-stat .v{font-family:var(--font-d);font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .hero-stat .v{background:linear-gradient(135deg,var(--red),var(--orange))}
 .hero-stat .l{font-size:12px;color:#EDE3D8;text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:2px}
 @media(max-width:700px){.hero-stats{gap:28px}}
 
@@ -378,14 +380,14 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;back
 @media(max-width:1100px){
   .nav-links{gap:18px}
   .nav-links a{font-size:13px;padding:8px 10px}
-  .brand-tag{font-size:9px;letter-spacing:.22em}
+  .brand-tag{font-size:9.5px;letter-spacing:.2em}
   .brand-name{font-size:27px}
   .brand-mark{height:44px}
   .nav-inner{height:76px}
 }
 @media(max-width:400px){
   .brand-name{font-size:22px}
-  .brand-tag{font-size:8px;letter-spacing:.13em}
+  .brand-tag{font-size:8px;letter-spacing:.17em}
   .brand-mark{height:38px}
 }
 @media(max-width:1024px) and (min-width:769px){
