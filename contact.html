@@ -93,7 +93,8 @@
     <div class="form-card reveal">
       <h3>Request a Quote</h3>
       <p class="fs">Fill in your project details and we'll get back to you with a structured approach.</p>
-      <form id="quoteForm">
+      <form id="quoteForm" name="enquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <p hidden><label>Leave this field empty <input name="bot-field"></label></p>
         <div class="form-row">
           <div class="fg"><label>Full Name <span class="req">*</span></label><input type="text" name="name" required placeholder="Your name"></div>
           <div class="fg"><label>Company Name</label><input type="text" name="company" placeholder="Company / organisation"></div>
@@ -217,6 +218,6 @@
   </div>
 </footer>
 
-<script src="assets/main.js"></script>
+<script src="assets/main.js?v=2"></script>
 </body>
 </html>
