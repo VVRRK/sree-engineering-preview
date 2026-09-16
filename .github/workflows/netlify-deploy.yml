@@ -1,5 +1,4 @@
 name: Netlify Deploy
-
 on:
   repository_dispatch:
     types: [netlify-deploy]
@@ -9,6 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Generate OG share image
+        run: |
+          python3 -m pip install --quiet --user "pillow==12.3.0"
+          mkdir -p "$RUNNER_TEMP/fonts"
+          curl -sfL -o "$RUNNER_TEMP/fonts/Poppins-ExtraBold.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-ExtraBold.ttf"
+          curl -sfL -o "$RUNNER_TEMP/fonts/Poppins-SemiBold.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-SemiBold.ttf"
+          curl -sfL -o "$RUNNER_TEMP/fonts/Poppins-Medium.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-Medium.ttf"
+          curl -sfL -o "$RUNNER_TEMP/fonts/JetBrainsMono-Medium.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf"
+          python3 scripts/gen-og.py --fonts-dir "$RUNNER_TEMP/fonts"
+          python3 - <<'PYEOF'
+          from PIL import Image
+          im = Image.open('assets/og-image.png')
+          im.verify()
+          im2 = Image.open('assets/og-image.png')
+          assert im2.size == (1200, 630), im2.size
+          print('OG image OK', im2.size)
+          PYEOF
+          sha256sum assets/og-image.png
       - name: Deploy to Netlify
         env:
           SITE_ID: ${{ github.event.client_payload.site_id }}
